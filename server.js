@@ -65,6 +65,8 @@ app.get('/', function (req, res) {
     initDb(function(err){});
   }
   if (db) {
+    var os = require("os");
+    var hostname = os.hostname();
     var col = db.collection('counts');
     // Create a document with request IP and current time of request
     col.insert({ip: req.ip, date: Date.now()});
@@ -89,11 +91,6 @@ app.get('/pagecount', function (req, res) {
   } else {
     res.send('{ pageCount: -1 }');
   }
-});
-
-app.get('/hostname', function (req, res) {
-  var os = require("os");
-  var hostname = os.hostname();
 });
 
 // error handling
