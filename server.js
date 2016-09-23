@@ -93,7 +93,7 @@ app.get('/pagecount', function (req, res) {
 
 app.get('/hostname', function (req, res) {
   var os = require("os");
-  os.hostname();
+  var hostname = os.hostname();
 });
 
 // error handling
