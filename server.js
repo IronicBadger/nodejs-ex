@@ -93,9 +93,9 @@ app.get('/pagecount', function (req, res) {
   }
 });
 
-app.get('/hostname'), function (req, res) {
+app.get('/hostname', function (req, res) {
   res.send('<html><body>Hello from Node.js container ' + hostname + '</body></html>');
-}
+});
 
 // error handling
 app.use(function(err, req, res, next){
