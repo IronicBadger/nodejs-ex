@@ -284,7 +284,7 @@ $ git push</pre>
                   </ul>
 
                 <h2>Request information</h2>
-                <p>Hostname: <%= varHostname %> - Page view count:
+                <p>Hostname: <% if (varHostname) {=varHostname} else {No hostname} %> - Page view count:
                 <% if (pageCountMessage) { %>
                    <span class="code" id="count-value"><%=pageCountMessage%></span>
                    </p>
